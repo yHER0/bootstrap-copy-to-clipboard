@@ -1,0 +1,39 @@
+/* Copy to Clipboard */
+.copy-link {
+    --height: 36px;
+    display: flex;
+    max-width: 700px;
+    padding-bottom: 10px;
+}
+
+.copy-link-input {
+    padding: 0 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.copy-link-button {
+    flex-shrink: 0;
+    width: var(--height);
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dddddd;
+    color: #333333;
+    outline: none;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.copy-link-button:hover {
+    background: #cccccc;
+}
+
+.copy-link-button:active {
+    background: #dddddd;
+}
+
+.text-area{
+    height:150px;
+}

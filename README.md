@@ -64,7 +64,7 @@ const _TEXTAREA = false
 ```
 If you want to have a textarea instead of a textfield you need to remove `<input type="text" class="copy-link-input form-control" value="Insert your text to copy" readonly>` and insert this:
 ```html
-<textarea class="copy-link-input form-control" readonly>Text to copy&#10;New Line to copy</textarea>
+<textarea class="copy-link-input form-control text-area" readonly>Text to copy&#10;New Line to copy</textarea>
 ```
 ---
 ### Dependencies

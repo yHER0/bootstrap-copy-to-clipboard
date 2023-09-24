@@ -9,9 +9,10 @@ Easily create flexible copy-to-clipboard with a tooltip for your Bootstrap5 webs
 
 ## Usage
 You can create three different clipboards statically with HTML or dynamically with JavaScript.   
-Textfield + Button, Textarea + Button, p-Element Text click to copy
+[Textfield + Button](https://camo.githubusercontent.com/4f696012e4c9b09a0ef217e326bc4e164bb7a2175b7ddc24ccffed568ba58a43/68747470733a2f2f692e696d6775722e636f6d2f7a6871367063672e706e67), [Textarea + Button](https://i.imgur.com/qrOCSb9.png), [span with Text click to copy](https://i.imgur.com/wwpQudg.png)
 
 ### HTML
+Textfield with a button to copy:
 ```html
 <div class="copy-link form-group">
     <input type="text" class="copy-link-input form-control" value="Insert your text to copy" readonly>
@@ -22,11 +23,18 @@ Textfield + Button, Textarea + Button, p-Element Text click to copy
     </button>
 </div>
 ```
+Text (span) which can be copied on click:
+```html
+<span class="span-copy-link">This text will be shown and copied on click</span>
+```
 
 ### JavaScript
 ```javascript
-const clipboard = new_copy_clipboard("This text will be copied");
-document.body.appendChild(clipboard);
+const clipboard = new_copy_clipboard("This text will be copied")
+document.body.appendChild(clipboard)
+
+const span = new_span_copy_clipboard("This text will be shown and copied on click")
+document.body.appendChild(span)
 ```
 ---
 ### Change the clipboards
@@ -38,8 +46,13 @@ You can define these things for your clipboard:
 
 #### Change with JavaScript
 ```javascript
-const clipboard = new_copy_clipboard("This text will be copied", title = "Text Copied!", action = "cut", textare = false);
-document.body.appendChild(clipboard);
+const clipboard = new_copy_clipboard("This text will be copied\nNew Line", title = "Text Copied!", action = "cut", textarea = true)
+document.body.appendChild(clipboard)
+```
+For the span you can only change the title:
+new_span_copy_clipboard("This text will be shown and copied on click", "Text copied!")
+```javascript
+const span = new_span_copy_clipboard("This text will be shown and copied on click", "Text copied!")
 ```
 
 #### Change with HTML
@@ -51,7 +64,7 @@ const _TEXTAREA = false
 ```
 If you want to have a textarea instead of a textfield you need to remove `<input type="text" class="copy-link-input form-control" value="Insert your text to copy" readonly>` and insert this:
 ```html
-<textarea class="copy-link-input form-control" readonly>Text to copy\nNew Line to copy</textarea>
+<textarea class="copy-link-input form-control" readonly>Text to copy&#10;New Line to copy</textarea>
 ```
 ---
 ### Dependencies

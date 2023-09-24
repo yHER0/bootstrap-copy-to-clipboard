@@ -5,6 +5,10 @@
     padding-bottom: 10px;
 }
 
+.span-copy-link{
+    cursor: pointer;
+}
+
 .copy-link-input {
     padding: 0 8px;
     border-top-right-radius: 0;
@@ -35,4 +39,5 @@
 
 .text-area{
     height:150px;
+    border-bottom-left-radius: 0;
 }

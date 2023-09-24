@@ -25,7 +25,7 @@ Textfield with a button to copy:
 ```
 Text (span) which can be copied on click:
 ```html
-<span class="span-copy-link">This text will be shown and copied on click</span>
+<span class="span-copy-link" data-value="This text will be copied">This text will be shown</span>
 ```
 
 ### JavaScript
@@ -33,7 +33,7 @@ Text (span) which can be copied on click:
 const clipboard = new_copy_clipboard("This text will be copied")
 document.body.appendChild(clipboard)
 
-const span = new_span_copy_clipboard("This text will be shown and copied on click")
+const span = new_span_copy_clipboard("This text will be shown", "This text will be copied")
 document.body.appendChild(span)
 ```
 ---

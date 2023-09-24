@@ -1,8 +1,15 @@
 # Bootstrap5 copy-to-clipboard
-Easily create flexible copy-to-clipboard with a tooltip for your Bootstrap5 website, create them statically or dynamically in runtime with JavaScript.
+
+<div align="center">
+    <img src="https://i.imgur.com/zhq6pcg.png" alt="Logo" width="500" height="130">
+  </a>
+</div>
+
+Easily create flexible copy-to-clipboard with a tooltip for your Bootstrap5 website, create them statically or dynamically in runtime with JavaScript. [Here](https://i.imgur.com/NkyV9YD.mp4) is an example gif.
 
 ## Usage
-You can create clipboards statically with HTML or dynamically with JavaScript:
+You can create three different clipboards statically with HTML or dynamically with JavaScript.   
+Textfield + Button, Textarea + Button, p-Element Text click to copy
 
 ### HTML
 ```html

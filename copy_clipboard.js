@@ -51,13 +51,13 @@ function new_copy_clipboard(text_to_copy, title=_TITLE, action=_ACTION, textarea
     return new_div
 }
 
-function new_span_copy_clipboard(text_to_copy, title=_TITLE){
+function new_span_copy_clipboard(text_to_show, text_to_copy, title=_TITLE){
     const span = document.createElement("span")
     span.type = "span"
     span.classList.add("span-copy-link")
-    span.innerHTML = text_to_copy
+    span.innerHTML = text_to_show
 
-    clipboard_add_event_listener(span, span, title)
+    clipboard_add_event_listener(span, text_to_copy, title)
     return span
 }
 
@@ -70,8 +70,8 @@ function clipboard_add_event_listener(copy_button, text_field, title= "Copied!",
 
     let text_to_copy = ""
 
-    if (text_field.classList.contains("span-copy-link")){
-        text_to_copy = text_field.innerHTML
+    if (copy_button.classList.contains("span-copy-link")){
+        text_to_copy = text_field
     }else{
        text_to_copy = text_field.value
     }
@@ -116,7 +116,7 @@ $(document).ready(function() {
         clipboard_add_event_listener(copy_button, text_field, _TITLE, _ACTION)
     })
 
-   document.querySelectorAll(".span-copy-link").forEach((copy_link_parent) => {
-        clipboard_add_event_listener(copy_link_parent, copy_link_parent, _TITLE, _ACTION)
+    document.querySelectorAll(".span-copy-link").forEach((copy_link_parent) => {
+        clipboard_add_event_listener(copy_link_parent, copy_link_parent.getAttribute("data-value"), _TITLE, _ACTION)
     })
 })

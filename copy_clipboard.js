@@ -1,4 +1,8 @@
-function new_copy_clipboard(text_to_copy, title="Copied!", action="copy", textarea = false){
+const _TITLE = "Copied!"
+const _ACTION = "copy"
+const _TEXTAREA = false
+
+function new_copy_clipboard(text_to_copy, title=_TITLE, action=_ACTION, textarea = _TEXTAREA){
     console.log(title)
     const new_div = document.createElement("div");
     new_div.classList.add("copy-link", "form-group");
@@ -94,6 +98,6 @@ $(document).ready(function() {
         const copy_button = copy_link_parent.querySelector(".copy-link-button");
         const text_field = copy_link_parent.querySelector(".copy-link-input");
 
-        clipboard_add_event_listener(copy_button, text_field, "Copied!", "cut");
+        clipboard_add_event_listener(copy_button, text_field, _TITLE, _ACTION);
     });
 });

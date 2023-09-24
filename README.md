@@ -36,9 +36,11 @@ document.body.appendChild(clipboard);
 ```
 
 #### Change with HTML
-In line 97 you can change the default behavior for clipboard added with HTML: `clipboard_add_event_listener(copy_button, text_field)` and add `title`, `action`
+In the first three lines you can change the default settings for clipboards created with HTML.
 ```javascript
-clipboard_add_event_listener(copy_button, text_field, title="Text copied!", action="cut");
+const _TITLE = "Copied!"
+const _ACTION = "copy"
+const _TEXTAREA = false
 ```
 If you want to have a textarea instead of a textfield you need to remove `<input type="text" class="copy-link-input form-control" value="Insert your text to copy" readonly>` and insert this:
 ```html

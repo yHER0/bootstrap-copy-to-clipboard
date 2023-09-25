@@ -50,9 +50,8 @@ const clipboard = new_copy_clipboard("This text will be copied\nNew Line", title
 document.body.appendChild(clipboard)
 ```
 For the span you can only change the title:
-new_span_copy_clipboard("This text will be shown and copied on click", "Text copied!")
 ```javascript
-const span = new_span_copy_clipboard("This text will be shown and copied on click", "Text copied!")
+const span = new_span_copy_clipboard("This text will be shown", "This text will be copied", title="Text Copied!")
 ```
 
 #### Change with HTML
